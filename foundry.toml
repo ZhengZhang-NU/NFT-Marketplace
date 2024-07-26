@@ -1,0 +1,12 @@
+[profile.default]
+src = 'contracts'
+out = 'out'
+libs = ['lib']
+
+remappings = [
+    '@openzeppelin/=lib/openzeppelin-contracts/',
+    '@solmate/=lib/solmate/src/'
+]
+
+[rpc_endpoints]
+sepolia = "https://eth-sepolia.g.alchemy.com/v2/${ALCHEMY_API_KEY}"
