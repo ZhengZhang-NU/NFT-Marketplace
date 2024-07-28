@@ -1,12 +1,12 @@
 import { createConfig, configureChains } from 'wagmi';
 import { publicProvider } from 'wagmi/providers/public';
 import { alchemyProvider } from 'wagmi/providers/alchemy';
-import { mainnet, sepolia } from 'wagmi/chains';
+import { sepolia } from 'wagmi/chains';
 
 const alchemyApiKey = import.meta.env.VITE_ALCHEMY_API_KEY || '';
 
 const { chains, publicClient, webSocketPublicClient } = configureChains(
-    [mainnet, sepolia],
+    [sepolia],
     [publicProvider(), alchemyProvider({ apiKey: alchemyApiKey })]
 );
 

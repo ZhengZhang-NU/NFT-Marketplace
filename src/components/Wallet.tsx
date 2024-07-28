@@ -1,6 +1,6 @@
 import React from 'react';
 import { WagmiConfig, useAccount, useConnect, useDisconnect } from 'wagmi';
-import { InjectedConnector } from '@wagmi/core/connectors/injected';
+import { InjectedConnector } from 'wagmi/connectors/injected';
 import { config } from '../config';
 
 interface WalletProviderProps {
@@ -14,7 +14,11 @@ export const WalletProvider: React.FC<WalletProviderProps> = ({ children }) => (
 export const Wallet: React.FC = () => {
     const { address, isConnected } = useAccount();
     const { connect } = useConnect({
-        connector: new InjectedConnector(),
+        connector: new InjectedConnector({
+            options: {
+                shimDisconnect: true,
+            },
+        }),
     });
     const { disconnect } = useDisconnect();
 
