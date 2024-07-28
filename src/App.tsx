@@ -24,14 +24,14 @@ const App: React.FC = () => {
         <WagmiConfig config={config}>
             <QueryClientProvider client={queryClient}>
                 <WalletProvider>
-                    <div>
+                    <div className="container">
                         <h1>Decentralized NFT Marketplace</h1>
                         <Wallet />
-                        <input type="file" onChange={handleUpload} />
+                        <input type="file" onChange={handleUpload} className="file-input"/>
                         {cid && (
                             <div>
                                 <p>File CID: {cid}</p>
-                                <p>IPFS URL: <a href={`https://ipfs.infura.io/ipfs/${cid}`} target="_blank" rel="noopener noreferrer">{`https://ipfs.infura.io/ipfs/${cid}`}</a></p>
+                                <p>IPFS URL: <a href={`https://gateway.pinata.cloud/ipfs/${cid}`} target="_blank" rel="noopener noreferrer">{`https://gateway.pinata.cloud/ipfs/${cid}`}</a></p>
                                 <CreateNFT cid={cid} />
                             </div>
                         )}

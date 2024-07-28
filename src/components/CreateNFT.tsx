@@ -15,7 +15,7 @@ const CreateNFT: React.FC<CreateNFTProps> = ({ cid }) => {
         address: NFTCollectionAddress,
         abi: contractJson.abi,
         functionName: 'mintTo',
-        args: [address, cid],
+        args: [address],
         chainId: 11155111, // Sepolia testnet chain ID
     });
 
@@ -28,8 +28,8 @@ const CreateNFT: React.FC<CreateNFTProps> = ({ cid }) => {
         }
 
         try {
-            const tx = await writeAsync();
-            const receipt = await (tx as unknown as { wait: () => Promise<any> }).wait();
+            const txResponse = await writeAsync();
+
             alert('NFT created successfully!');
         } catch (error) {
             console.error('Error creating NFT:', error);
