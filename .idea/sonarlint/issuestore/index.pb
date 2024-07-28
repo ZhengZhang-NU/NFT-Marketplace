@@ -40826,3 +40826,11 @@ k
 ;node_modules/@stablelib/constant-time/constant-time.test.ts,b/1/b1f978e3fba4633788cd853ce597b07217902247
 b
 2node_modules/@stablelib/constant-time/package.json,8/f/8f024fb6c7d4dc44d25a5bb006514caa561a2a16
+?
+dist/index.html,8/3/83c3885e754cb61b14e68e2ab17c1c37c43a2f3f
+?
+uploadToIPFS.js,3/8/3890ab962c17094817470bb32151402d035c3c1c
+;
+zipFiles.js,b/4/b46d0c1b8e1095a1806712a92bb4c05a635c2522
+?
+uploadAndPin.js,7/6/761280256b7b4cf8decd56876ef58f32b8c08dd5
