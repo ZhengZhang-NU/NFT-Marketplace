@@ -20,4 +20,4 @@ export const config = createConfig({
     ],
 });
 
-export const NFTCollectionAddress = "0xdA107EE3f95BeB22B973BCAdbcfF2bDE5d91b06b";
+export const NFTCollectionAddress = "0xD69a028D92A33ad0866113e1975Ce679C4C8621b"; // 使用新部署的合约地址

@@ -2,7 +2,7 @@ const { ethers } = require("ethers");
 const fs = require("fs");
 require("dotenv").config();
 
-const contractJson = JSON.parse(fs.readFileSync("./out/NFTCollection.sol/NFTCollection.json", "utf8"));
+const contractJson = JSON.parse(fs.readFileSync("./out/NFTCollectionWithSignature.sol/NFTCollectionWithSignature.json", "utf8"));
 
 async function main() {
     try {
@@ -32,12 +32,16 @@ async function main() {
             maxFeePerGas: ethers.utils.parseUnits('10', 'gwei'),
         };
 
-        const nft = await NFTCollectionFactory.deploy("MyNFT", "MNFT", "https://ipfs.io/ipfs/QmQGxHEnAKrU41FtPnGnBBicqKgmntj63ZaD6uW9Ca6qKn/", options);
+        const baseTokenURI = "https://ipfs.io/ipfs/QmQGxHEnAKrU41FtPnGnBBicqKgmntj63ZaD6uW9Ca6qKn/";
+        const nft = await NFTCollectionFactory.deploy("MyNFTWithSignature", "MNFTS", baseTokenURI, options);
 
         console.log("Awaiting deployment...");
         await nft.deployTransaction.wait();
 
-        console.log("NFTCollection deployed to:", nft.address);
+        console.log("NFTCollectionWithSignature deployed to:", nft.address);
+
+        // Save the new contract address to a file for later use
+        fs.writeFileSync('./config.js', `export const NFTCollectionAddress = "${nft.address}";\n`);
     } catch (error) {
         console.error("Error deploying contract:", error);
         process.exit(1);

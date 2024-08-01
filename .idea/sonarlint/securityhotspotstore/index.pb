@@ -45138,3 +45138,7 @@ G.idea/sonarlint/issuestore/b/f/bfb4b0f02c384501d1d66e56132ddcabfe02c7c5,e/9/e9
 Q.idea/sonarlint/securityhotspotstore/1/d/1d0825d7fcdb893d6c747cdd9c914c34888a750a,d/5/d54897fb2708f174e60e8f1efd3a38b54863c9d9
 w
 G.idea/sonarlint/issuestore/8/0/80eaf96413498757af9a8d05c2b68eb5cc78df66,7/3/73d00bf5a963e79bee1d967d0f9f6e028a7544c1
+X
+(contracts/NFTCollectionWithSignature.sol,c/2/c27f47c9c608d123091c5a8e90eed8008b2a1796
+9
+	config.js,1/6/1677f29b39bf4fb465d7689c0b6b95fc646fcdbc
