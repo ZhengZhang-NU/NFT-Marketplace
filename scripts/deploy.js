@@ -40,8 +40,6 @@ async function main() {
 
         console.log("NFTCollectionWithSignature deployed to:", nft.address);
 
-        // Save the new contract address to a file for later use
-        fs.writeFileSync('./config.js', `export const NFTCollectionAddress = "${nft.address}";\n`);
     } catch (error) {
         console.error("Error deploying contract:", error);
         process.exit(1);
