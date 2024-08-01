@@ -7,10 +7,10 @@ import FormData from 'form-data';
 const PINATA_API_KEY = 'd9f24bcb5a6ec5efc3d7';
 const PINATA_API_SECRET = 'fb30a80408eda20c53579d63cb6050cf208f3c480e2e90838fb50858c7c7fa93';
 
-// 获取当前目录路径
+
 const __dirname = path.dirname(new URL(import.meta.url).pathname);
 
-// 构建HTML文件路径
+
 const htmlFilePath = path.join(__dirname, 'dist', 'index.html');
 
 const uploadHtmlToPinata = async (filePath) => {
