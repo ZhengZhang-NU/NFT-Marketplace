@@ -1,21 +1,20 @@
 import React, { useState } from 'react';
 import { ethers } from 'ethers';
-import { useAccount } from 'wagmi';
 import { usePrepareContractWrite, useContractWrite } from 'wagmi';
 import { NFTCollectionAddress } from '../config';
 import contractJson from '../../out/NFTCollectionWithSignature.sol/NFTCollectionWithSignature.json';
 
 interface CreateNFTProps {
     cid: string;
+    safeAddress: string;
 }
 
-const CreateNFT: React.FC<CreateNFTProps> = ({ cid }) => {
-    const { address } = useAccount();
+const CreateNFT: React.FC<CreateNFTProps> = ({ cid, safeAddress }) => {
     const [message, setMessage] = useState<string>("");
     const [signature, setSignature] = useState<string>("");
 
     const signMessage = async () => {
-        if (!message || !address) return;
+        if (!message) return;
         const signer = new ethers.providers.Web3Provider(window.ethereum!).getSigner();
         const sig = await signer.signMessage(message);
         setSignature(sig);
@@ -25,7 +24,7 @@ const CreateNFT: React.FC<CreateNFTProps> = ({ cid }) => {
         address: NFTCollectionAddress,
         abi: contractJson.abi,
         functionName: 'mintTo',
-        args: [address, signature, message],
+        args: [safeAddress, signature, message],
         chainId: 11155111, // Sepolia testnet chain ID
     });
 

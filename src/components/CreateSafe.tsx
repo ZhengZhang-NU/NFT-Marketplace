@@ -1,14 +1,20 @@
 import React, { useState } from 'react';
 import { createSafe } from '../gnosisSafe';
 
-const CreateSafe: React.FC = () => {
+interface CreateSafeProps {
+    onCreateSafe: (safeAddress: string) => void;
+}
+
+const CreateSafe: React.FC<CreateSafeProps> = ({ onCreateSafe }) => {
     const [safeAddress, setSafeAddress] = useState<string | null>(null);
     const [error, setError] = useState<string | null>(null);
 
     const handleCreateSafe = async () => {
         try {
             const safeSdk = await createSafe();
-            setSafeAddress(await safeSdk.getAddress());
+            const address = safeSdk.getAddress();
+            setSafeAddress(address);
+            onCreateSafe(address);
         } catch (err: any) {
             setError(err.message);
         }
