@@ -45142,3 +45142,7 @@ X
 (contracts/NFTCollectionWithSignature.sol,c/2/c27f47c9c608d123091c5a8e90eed8008b2a1796
 9
 	config.js,1/6/1677f29b39bf4fb465d7689c0b6b95fc646fcdbc
+A
+src/gnosisSafe.ts,d/2/d2b2849e2ae8cf7c09e58e57818ef54183b9f2e9
+M
+src/components/CreateSafe.tsx,2/0/20b53a37df38fd77525af4391f2308b49cb7f351

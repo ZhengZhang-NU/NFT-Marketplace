@@ -5,6 +5,7 @@ import { config } from './config';
 import WalletProvider, { Wallet } from './components/Wallet';
 import CreateNFT from './components/CreateNFT';
 import { uploadToIPFS } from './ipfsClient';
+import CreateSafe from './components/CreateSafe';
 
 const queryClient = new QueryClient();
 
@@ -35,6 +36,7 @@ const App: React.FC = () => {
                                 <CreateNFT cid={cid} />
                             </div>
                         )}
+                        <CreateSafe />
                     </div>
                 </WalletProvider>
             </QueryClientProvider>
